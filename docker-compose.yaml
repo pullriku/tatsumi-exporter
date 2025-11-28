@@ -1,0 +1,11 @@
+services:
+  tatsumi-exporter:
+    build: .
+    container_name: tatsumi-exporter
+    pid: "host"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/log/journal:/var/log/journal:ro
+    env_file:
+      - .env
+    restart: always

@@ -1,0 +1,24 @@
+[package]
+name = "tatsumi-exporter"
+description = "A Prometheus exporter."
+version = "0.1.0"
+edition = "2024"
+authors = ["Riku Tatsumi <riku3dno.1@gmail.com>"]
+repository = "https://github.com/pullriku/tatsumi-exporter"
+license = "MIT"
+
+[profile.release]
+lto = true
+
+[[bin]]
+name = "tatsumi-exporter"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0.100"
+axum = "0.8.7"
+bollard = "0.19.4"
+dotenvy = "0.15.7"
+procfs = "0.18.0"
+prometheus = "0.14.0"
+tokio = { version = "1.48.0", features = ["full"] }
